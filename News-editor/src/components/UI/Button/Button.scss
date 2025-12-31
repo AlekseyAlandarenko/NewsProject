@@ -1,0 +1,80 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.btn {
+  @include flex-row($space-2);
+  @include focus-outline;
+
+  background: $color-primary;
+  border: none;
+  border-radius: $radius-control;
+  color: $color-text-white;
+  cursor: pointer;
+  height: $height-control;
+  justify-content: center;
+  padding: 0 $space-4;
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  &:active {
+    transform: scale($btn-press-scale);
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+    transform: none;
+  }
+
+  &__content {
+    @include flex-row($space-2);
+  }
+
+  &__spinner {
+    animation: spin 1s linear infinite;
+    border: 2px solid rgba($color-text-white, 0.5);
+    border-radius: 50%;
+    border-top-color: $color-text-white;
+    height: 16px;
+    width: 16px;
+  }
+
+  &__label {
+    @include text-md;
+
+    line-height: 1;
+  }
+
+  &--primary {
+    background: $color-primary;
+    color: $color-text-white;
+
+    &:hover {
+      background: $color-primary-hover;
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background: rgba($color-primary, 0.2);
+    }
+  }
+
+  &--danger {
+    background: $color-error;
+    color: $color-text-white;
+
+    &:hover {
+      background: $color-error-hover;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

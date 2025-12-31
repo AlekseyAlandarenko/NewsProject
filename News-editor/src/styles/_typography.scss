@@ -1,0 +1,48 @@
+@use './variables' as *;
+
+:root {
+  --font-12: 12px;
+  --font-14: 14px;
+  --font-16: 16px;
+  --font-24: 24px;
+  --font-32: 32px;
+  --lh-default: 1.45;
+  --fw-semibold: 600;
+  --fw-medium: 500;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: var(--lh-default);
+}
+
+body, h1, h2, h3, p {
+  margin: 0;
+}
+
+h1, .title--h1 {
+  font-size: var(--font-32);
+  font-weight: var(--fw-semibold);
+}
+
+h2, .title--h2 {
+  font-size: var(--font-24);
+  font-weight: var(--fw-semibold);
+}
+
+h3, .title--h3 {
+  font-size: var(--font-16);
+  font-weight: var(--fw-medium);
+}
+
+.paragraph--sm { font-size: var(--font-12); }
+.paragraph--md { font-size: var(--font-14); }
+.paragraph--lg { font-size: var(--font-16); }
+
+::placeholder {
+  color: $color-text-muted;
+  font-size: var(--font-14);
+  opacity: 1;
+}

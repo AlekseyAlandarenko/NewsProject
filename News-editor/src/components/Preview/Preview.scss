@@ -1,0 +1,74 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.preview {
+  @include card;
+
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: break-word;
+
+  &__text {
+    margin: $space-3 0;
+
+    p {
+      line-height: var(--lh-default);
+      margin: $space-2 0;
+    }
+
+    ul,
+    ol {
+      margin: $space-3 0;
+      padding-left: $space-5;
+    }
+
+    img {
+      border-radius: $radius-container;
+      margin-top: $space-3;
+      max-width: 100%;
+    }
+  }
+
+  &__quote {
+    @include input-surface;
+
+    border-left: $border-thick solid $color-primary;
+    font-style: italic;
+    margin: $space-3 0;
+    padding: $space-3 $space-4;
+  }
+
+  &__image {
+    border-radius: $radius-container;
+    display: block;
+    margin-top: $space-3;
+    max-width: 100%;
+  }
+
+  &__file {
+    @include hover-bg(rgba($bg-3, 0.8));
+
+    display: inline-block;
+    margin-top: $space-3;
+    text-decoration: none;
+  }
+
+  &__code {
+    margin: $space-3 0;
+
+    pre {
+      @include input-surface;
+
+      overflow-x: auto;
+      padding: $space-3;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    code {
+      font-family: Consolas, Monaco, monospace;
+
+      @include text-md;
+    }
+  }
+}

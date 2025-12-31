@@ -1,0 +1,15 @@
+@use '../../../styles/variables' as *;
+
+.title {
+  color: $color-text;
+  font-weight: var(--fw-semibold);
+  margin: 0;
+  transition: color 0.2s ease;
+
+  &--primary { color: $color-primary; }
+  &--muted { color: $color-text-muted; }
+
+  &--h1 { font-size: var(--font-32); }
+  &--h2 { font-size: var(--font-24); }
+  &--h3 { font-size: var(--font-18); }
+}

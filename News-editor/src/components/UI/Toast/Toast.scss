@@ -1,0 +1,51 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.toast {
+  @include flex-row($space-3);
+  @include panel;
+
+  animation: toast-in 0.2s ease;
+  cursor: pointer;
+  min-width: $panel-min-width;
+  padding: $space-3 $space-4;
+  pointer-events: auto;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba($bg-3, 0.8);
+  }
+
+  &__icon {
+    @include text-lg;
+
+    line-height: 1;
+  }
+
+  &__message {
+    @include text-md;
+
+    color: $color-text;
+    flex: 1;
+  }
+
+  &--success {
+    border-left: $space-1 solid $color-primary;
+  }
+
+  &--error {
+    border-left: $space-1 solid $color-error;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY($space-7);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

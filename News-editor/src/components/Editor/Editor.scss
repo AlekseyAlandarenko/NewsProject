@@ -1,0 +1,20 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.editor {
+  @include section;
+
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+
+  &__add-buttons {
+    @include button-row;
+
+    .btn {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

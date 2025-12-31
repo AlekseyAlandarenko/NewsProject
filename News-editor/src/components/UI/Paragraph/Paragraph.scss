@@ -1,0 +1,14 @@
+@use '../../../styles/variables' as *;
+
+.paragraph {
+  color: $color-text;
+  margin: 0;
+  transition: color 0.2s ease;
+
+  &--muted { color: $color-text-muted; }
+  &--primary { color: $color-primary; }
+
+  &--sm { font-size: var(--font-12); }
+  &--md { font-size: var(--font-14); }
+  &--lg { font-size: var(--font-16); }
+}

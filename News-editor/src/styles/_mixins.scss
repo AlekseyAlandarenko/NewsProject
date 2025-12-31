@@ -1,0 +1,112 @@
+@use './variables' as *;
+
+@mixin card {
+  background: $bg-3;
+  border: 1px solid $color-border;
+  border-radius: $radius-container;
+  padding: $space-5;
+}
+
+@mixin section {
+  background: $bg-3;
+  border-radius: $radius-container;
+  padding: $space-5;
+}
+
+@mixin panel {
+  background: $bg-3;
+  border: 1px solid $color-border;
+  border-radius: $radius-container;
+}
+
+@mixin button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+
+  & > .btn,
+  & > .custom-file-button {
+    border-radius: $radius-control;
+    flex: 1 1 auto;
+    font-size: var(--font-14);
+    font-weight: var(--fw-semibold);
+    min-height: $height-control;
+  }
+}
+
+@mixin small-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  margin-bottom: $space-3;
+
+  & > .btn {
+    border-radius: $radius-control;
+    flex: none;
+    font-size: var(--font-12);
+    font-weight: var(--fw-semibold);
+    height: $height-control-sm;
+    padding: 0 $space-3;
+  }
+}
+
+@mixin input-surface {
+  background: $bg-2;
+  border: 1px solid $color-border;
+  border-radius: $radius-container;
+}
+
+@mixin placeholder($left: $space-3) {
+  position: relative;
+
+  &:empty::before {
+    color: $color-text-muted;
+    content: attr(data-placeholder);
+    font-size: var(--font-14);
+    font-style: italic;
+    left: $left;
+    opacity: 0.6;
+    pointer-events: none;
+    position: absolute;
+    top: $space-3;
+    user-select: none;
+  }
+}
+
+@mixin focus-primary-border {
+  transition: border-color 0.2s ease;
+
+  &:focus,
+  &:focus-visible {
+    border: 2px solid $color-primary;
+    outline: none;
+  }
+}
+
+@mixin focus-outline {
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+@mixin hover-bg($color) {
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: $color;
+  }
+}
+
+@mixin flex-row($gap: $space-3, $align: center, $wrap: nowrap) {
+  align-items: $align;
+  display: flex;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+@mixin text-sm { font-size: var(--font-12); }
+
+@mixin text-md { font-size: var(--font-14); }
+
+@mixin text-lg { font-size: var(--font-16); }
