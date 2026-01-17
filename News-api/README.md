@@ -101,11 +101,28 @@ docker-compose up --build
 ```
 
 ## Деплой
-Проект развёрнут на **Render**:
-- Используется `Dockerfile`
-- Переменные окружения задаются через **Dashboard**
-- MongoDB подключён через **Atlas**
-- Конфигурация: `render.yaml`
+Проект развёрнут на **Render** и доступен по адресу:
+`https://news-api-i776.onrender.com`
+
+Используется:
+- Используется **Dockerfile**
+- База данных — **MongoDB Atlas**
+- Переменные окружения задаются через **Render Dashboard**
+- Автодеплой из ветки `master`
+
+Пример запроса:
+```bash
+GET https://news-api-i776.onrender.com/news
+```
+Ответ:
+```json
+{
+  "data": [],
+  "total": 0,
+  "page": 1,
+  "limit": 10
+}
+```
 
 ## Авторизация
 JWT передаётся в заголовке запроса:
